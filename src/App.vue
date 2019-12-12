@@ -7,13 +7,28 @@
     <router-view/>
   </div>
 </template>
+<script>
+console.log('脚本执行')
+window.addEventListener('DOMContentLoaded', function () {
+  var documentElement = document.documentElement
 
+  if (documentElement.requestFullscreen) {
+    documentElement.requestFullscreen()
+  } else if (documentElement.mozRequestFullScreen) {
+    documentElement.mozRequestFullScreen()
+  } else if (documentElement.webkitRequestFullScreen) {
+    documentElement.webkitRequestFullScreen()
+  }
+})
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  width: 1080px;
+  height: 1980px;
   color: #2c3e50;
 }
 
