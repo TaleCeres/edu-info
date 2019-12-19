@@ -1,10 +1,10 @@
 <template>
-  <div></div>
+  <div class="business-box"></div>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'business'
 }
 </script>
 

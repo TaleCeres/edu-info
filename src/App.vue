@@ -1,34 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
-<script>
-console.log('脚本执行')
-window.addEventListener('DOMContentLoaded', function () {
-  var documentElement = document.documentElement
-
-  if (documentElement.requestFullscreen) {
-    documentElement.requestFullscreen()
-  } else if (documentElement.mozRequestFullScreen) {
-    documentElement.mozRequestFullScreen()
-  } else if (documentElement.webkitRequestFullScreen) {
-    documentElement.webkitRequestFullScreen()
-  }
-})
-</script>
-<style>
+<style lang="stylus">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'hwyt', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   width: 1080px;
-  height: 1980px;
+  height: 1920px;
   color: #2c3e50;
 }
 
