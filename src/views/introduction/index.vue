@@ -1,8 +1,6 @@
 <template>
 <div class="introduction-box">
-  <Icon/>
-  <Back/>
-  <Home/>
+  <Icons/>
   <div class="nav-box">
     <div class="title-btn nav" @click="goHistory">发展历程</div>
     <div class="title-btn nav" @click="goFamily">大家庭</div>

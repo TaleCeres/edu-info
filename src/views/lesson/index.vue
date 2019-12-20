@@ -1,8 +1,6 @@
 <template>
   <div class="lesson-box">
-    <Icon/>
-    <Back/>
-    <Home/>
+    <Icons/>
     <div class="box">
       <div class="art" @click="goDetail(1)"></div>
       <div class="math" @click="goDetail(2)"></div>
@@ -17,7 +15,7 @@ export default {
   name: 'index',
   methods: {
     goDetail (n) {
-      alert(n)
+      this.$router.push({ path: '/lesson/show', query: { id: n } })
     }
   }
 }

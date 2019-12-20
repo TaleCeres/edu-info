@@ -1,8 +1,6 @@
 <template>
     <div class="family-box">
-      <Icon/>
-      <Back/>
-      <Home/>
+      <Icons/>
       <div class="title-btn title">美 数 乐 大 家 庭</div>
       <div class="img"><img src="./images/family.png" alt=""></div>
     </div>

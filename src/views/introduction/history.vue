@@ -1,8 +1,6 @@
 <template>
   <div class="family-box">
-    <Icon/>
-    <Back/>
-    <Home/>
+    <Icons/>
     <div class="title-btn title">发 展 历 程</div>
     <div class="img"><img src="./images/history.png" alt=""></div>
   </div>

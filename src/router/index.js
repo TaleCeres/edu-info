@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import introduction from './introduction'
 import lesson from './lesson'
+import about from './about'
 const _import = file => () => import(`@/views/${file}.vue`)
 Vue.use(VueRouter)
 
@@ -11,16 +12,9 @@ const routes = [
     name: 'index',
     component: _import('index/index')
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
   ...introduction,
-  ...lesson
+  ...lesson,
+  ...about
 ]
 
 const router = new VueRouter({

@@ -2,12 +2,12 @@
   <div class="index-box">
     <Icon/>
     <div class="intro">
-      <div class="text">品牌介绍</div>
+      <div class="text" @click="goIntroduction()">品牌介绍</div>
     </div>
     <div class="item-box">
-      <div class="lesson item"><div class="item-text" @click="goIntroduction()">课程介绍</div> </div>
-      <div class="center-info item "><div class="item-text">中心风采</div></div>
-      <div class="about item"><div class="item-text">联系我们</div></div>
+      <div class="lesson item"><div class="item-text" @click="goLesson()">课程介绍</div> </div>
+      <div class="center-info item "><div class="item-text" @click="goTeacher()">中心风采</div></div>
+      <div class="about item"><div class="item-text" @click="goAbout()">联系我们</div></div>
     </div>
   </div>
 </template>
@@ -18,6 +18,15 @@ export default {
   methods: {
     goIntroduction () {
       this.$router.push('/introduction')
+    },
+    goLesson () {
+      this.$router.push('/lesson')
+    },
+    goTeacher () {
+      this.$router.push('/teacher')
+    },
+    goAbout () {
+      this.$router.push('/about')
     }
   }
 }
