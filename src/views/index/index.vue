@@ -23,7 +23,7 @@ export default {
       this.$router.push('/lesson')
     },
     goTeacher () {
-      this.$router.push('/teacher')
+      this.$router.push('/center')
     },
     goAbout () {
       this.$router.push('/about')

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import introduction from './introduction'
 import lesson from './lesson'
 import about from './about'
+import center from './center'
 const _import = file => () => import(`@/views/${file}.vue`)
 Vue.use(VueRouter)
 
@@ -14,7 +15,8 @@ const routes = [
   },
   ...introduction,
   ...lesson,
-  ...about
+  ...about,
+  ...center
 ]
 
 const router = new VueRouter({

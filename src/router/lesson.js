@@ -7,18 +7,18 @@ export default [
     name: 'lesson'
   },
   {
-    path: '/lesson/detail',
-    component: _import('lesson/detail'),
-    name: 'lessonDetail'
+    path: '/lesson/image',
+    component: _import('lesson/image'),
+    name: 'lessonImage'
   },
   {
     path: '/lesson/content',
-    component: _import('lesson/content'),
+    component: _import('lesson/Content'),
     name: 'lessonContent'
   },
   {
     path: '/lesson/video',
-    component: _import('lesson/video'),
+    component: _import('lesson/lessonVideo'),
     name: 'lessonVideo'
   },
   {

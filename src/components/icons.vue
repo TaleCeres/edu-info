@@ -3,6 +3,7 @@
       <Icon/>
       <Home/>
       <Back/>
+      <Tabs/>
     </div>
 </template>
 

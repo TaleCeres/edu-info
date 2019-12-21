@@ -1,61 +1,43 @@
 <template>
-    <div class="lesson-show" >
-      <Icons/>
-      <div class="top" :class="'color'+id">
-        <div class="age">{{age}}</div>
-        <div class="item" :class="'btn-bg'+id" @click="goContent">课程体系和设置</div>
-        <div class="item" :class="'btn-bg'+id" @click="goImage">课 程 展 示</div>
-        <div class="item" :class="'btn-bg'+id" @click="goVideo">宣 传 视 频</div>
+  <div class="lesson-content">
+    <Icons/>
+    <div class="top" :class="'color'+id">
+      <div class="item" :class="'btn-bg'+id">宣传视频</div>
+      <div class="content">
+        <video controls="" autoplay="" name="media" width="100%"><source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4"></video>
       </div>
-      <div class="bg1 bg_item" v-if="id=='1'"></div>
-      <div class="bg2 bg_item" v-if="id=='2'"></div>
-      <div class="bg3 bg_item" v-if="id=='3'"></div>
-      <div class="bg4 bg_item" v-if="id=='4'"></div>
     </div>
+    <div class="bg1 bg_item" v-if="id=='1'"></div>
+    <div class="bg2 bg_item" v-if="id=='2'"></div>
+    <div class="bg3 bg_item" v-if="id=='3'"></div>
+    <div class="bg4 bg_item" v-if="id=='4'"></div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'show',
+  name: 'lessVideo',
   data () {
     return {
-      id: '1',
-      ageList: ['2-7周岁', '3-6周岁', '5-12周岁', '5-6周岁'],
-      age: '2-7周岁'
+      id: 1
     }
   },
   created () {
     let { id } = this.$route.query
     this.id = id
-    this.changeColor()
   },
   activated () {
     let { id } = this.$route.query
     this.id = id
-    this.changeColor()
   },
-  methods: {
-    changeColor () {
-      this.age = this.ageList[this.id - 1]
-    },
-    goContent () {
-      this.$router.push({ path: '/lesson/content', query: { id: this.id } })
-    },
-    goImage () {
-      this.$router.push({ path: '/lesson/image', query: { id: this.id } })
-    },
-    goVideo () {
-      this.$router.push({ path: '/lesson/video', query: { id: this.id } })
-    }
-  }
+  methods: {}
 }
 </script>
 
 <style scoped lang="stylus">
-  .lesson-show{
+  .lesson-content{
     width 100%
     height 100%
-
     background #FFE674
     .color1{
       color #561C8C
@@ -87,12 +69,16 @@ export default {
       top 280px
       z-index 2
       left 131px
-      .age{
-        margin-bottom 96px
+      .content{
+        width:811px;
+        height:1094px;
+        background:rgba(255,243,211,1);
+        border:6px solid rgba(90, 16, 148, 1);
+        box-shadow:9px 13px 20px 4px rgba(100,66,0,0.46);
       }
     }
     .item{
-      margin-bottom 166px
+      margin-bottom 80px
       text-align center
       width 840px
       height 200px
