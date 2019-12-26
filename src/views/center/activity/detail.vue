@@ -3,8 +3,8 @@
     <Icons/>
     <div class="top">
       <div class="content">
-        <div class="title">活动名称</div>
-        <div class="text">大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦</div>
+        <div class="title">{{activity.name}}</div>
+        <div class="text" v-html="activity.richText"></div>
       </div>
     </div>
     <div class="bg">
@@ -14,11 +14,30 @@
 </template>
 
 <script>
+import { getActivity } from '@/api/activity'
+
 export default {
   name: 'activityDetail',
   data () {
     return {
-      list: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      activity: {}
+    }
+  },
+  mounted () {
+    let id = this.$route.query.id
+    this.id = id
+    this.getActivity()
+  },
+  activated () {
+    let id = this.$route.query.id
+    this.id = id
+    this.getActivity()
+  },
+  methods: {
+    getActivity () {
+      getActivity(this.id).then(res => {
+        this.activity = res.data
+      })
     }
   }
 }

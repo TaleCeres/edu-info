@@ -1,7 +1,7 @@
 <template>
     <div class="family-box">
       <Icons/>
-      <div class="title-btn title">美 数 乐 大 家 庭</div>
+      <div class="title-btn title">美数乐大家庭</div>
       <div class="img"><img src="./images/family.png" alt=""></div>
     </div>
 </template>

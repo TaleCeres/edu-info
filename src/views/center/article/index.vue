@@ -4,11 +4,11 @@
     <div class="top">
       <div class="article-title">育儿知识分享</div>
       <div class="list" >
-        <div class="item" :key="i" v-for="i in list">
-          <div class="icon"></div>
+        <div class="item" :key="index" v-for="(item,index) in list" @click="goDetail(item._id)">
+          <div class="icon"><img :src="item.icon"></div>
           <div class="content">
-            <div class="title">标题。。。。。</div>
-            <div class="intro">大师的那是就看到你金克拉撒旦</div>
+            <div class="title">{{item.title}}</div>
+            <div class="intro">{{item.content.substring(1,50)+'...'}}</div>
           </div>
         </div>
       </div>
@@ -20,11 +20,25 @@
 </template>
 
 <script>
+import { getList } from '@/api/article'
 export default {
   name: 'article',
   data () {
     return {
-      list: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      list: []
+    }
+  },
+  mounted () {
+    this.getList()
+  },
+  methods: {
+    getList () {
+      getList().then(res => {
+        this.list = res.data
+      })
+    },
+    goDetail (id) {
+      this.$router.push({ path: '/center/article/detail', query: { id } })
     }
   }
 }
@@ -42,20 +56,19 @@ export default {
       left 77px
       width 934px
       .article-title{
-        width 707px
-        height 329px
+        width 735px
+        height 357px
         margin 0 auto
         font-size 95px
         color #ffffff
         -webkit-text-stroke:4px #000;
-        line-height 280px
+        line-height 320px
         text-stroke:4px #000;
         letter-spacing:12px
         font-weight bolder
-        background url("../images/item_4.png") 100% 100%
+        background url("../images/item_4.png")
       }
       .list{
-        margin-top 33px
         width 868px
         padding 48px 33px
         height:961px;
@@ -67,13 +80,21 @@ export default {
           height 300px
           margin-bottom 36px
           display flex
+          border-bottom 4px solid #eee
+          padding-bottom 20px
           .icon{
             width 300px
             height 300px
             background #FF5883
             border-radius 20px
+            overflow hidden
+            img{
+              width 100%
+              height 100%
+            }
           }
           .content{
+            width 550px
             text-align left
             margin-left 30px
             .title{

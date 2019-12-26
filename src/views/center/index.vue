@@ -44,13 +44,12 @@ export default {
       left 179px
       z-index 2
       .nav-item{
-        width 707px
-        height 329px
-        margin-bottom 38px
+        width 735px
+        height 357px
         font-size 95px
         color #ffffff
         -webkit-text-stroke:3px #000;
-        line-height 280px
+        line-height 320px
         text-stroke:3px #000;
         letter-spacing:12px
         &.item1{

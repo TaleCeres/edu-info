@@ -1,16 +1,16 @@
 <template>
     <div class="lesson-show" >
       <Icons/>
-      <div class="top" :class="'color'+id">
+      <div class="top" :class="'color'+index">
         <div class="age">{{age}}</div>
-        <div class="item" :class="'btn-bg'+id" @click="goContent">课程体系和设置</div>
-        <div class="item" :class="'btn-bg'+id" @click="goImage">课 程 展 示</div>
-        <div class="item" :class="'btn-bg'+id" @click="goVideo">宣 传 视 频</div>
+        <div class="item" :class="'btn-bg'+index" @click="goContent">课程体系和设置</div>
+        <div class="item" :class="'btn-bg'+index" @click="goImage">课程展示</div>
+        <div class="item" :class="'btn-bg'+index" @click="goVideo">宣传视频</div>
       </div>
-      <div class="bg1 bg_item" v-if="id=='1'"></div>
-      <div class="bg2 bg_item" v-if="id=='2'"></div>
-      <div class="bg3 bg_item" v-if="id=='3'"></div>
-      <div class="bg4 bg_item" v-if="id=='4'"></div>
+      <div class="bg1 bg_item" v-if="index=='1'"></div>
+      <div class="bg2 bg_item" v-if="index=='2'"></div>
+      <div class="bg3 bg_item" v-if="index=='3'"></div>
+      <div class="bg4 bg_item" v-if="index=='4'"></div>
     </div>
 </template>
 
@@ -20,32 +20,35 @@ export default {
   data () {
     return {
       id: '1',
+      index: '1',
       ageList: ['2-7周岁', '3-6周岁', '5-12周岁', '5-6周岁'],
       age: '2-7周岁'
     }
   },
   created () {
-    let { id } = this.$route.query
+    let { id, index } = this.$route.query
+    this.index = index
     this.id = id
     this.changeColor()
   },
   activated () {
-    let { id } = this.$route.query
+    let { id, index } = this.$route.query
+    this.index = index
     this.id = id
     this.changeColor()
   },
   methods: {
     changeColor () {
-      this.age = this.ageList[this.id - 1]
+      this.age = this.ageList[this.index - 1]
     },
     goContent () {
-      this.$router.push({ path: '/lesson/content', query: { id: this.id } })
+      this.$router.push({ path: '/lesson/content', query: { id: this.id, index: this.index } })
     },
     goImage () {
-      this.$router.push({ path: '/lesson/image', query: { id: this.id } })
+      this.$router.push({ path: '/lesson/image', query: { id: this.id, index: this.index } })
     },
     goVideo () {
-      this.$router.push({ path: '/lesson/video', query: { id: this.id } })
+      this.$router.push({ path: '/lesson/video', query: { id: this.id, index: this.index } })
     }
   }
 }

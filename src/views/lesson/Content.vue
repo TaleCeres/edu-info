@@ -1,35 +1,49 @@
 <template>
 <div class="lesson-content">
   <Icons/>
-  <div class="top" :class="'color'+id">
-    <div class="item" :class="'btn-bg'+id">课程体系和设置</div>
-    <div class="content">
+  <div class="top">
+    <div class="item" :class="'btn-bg'+index">课程体系和设置</div>
+    <div class="content" >
+      {{lesson.content}}
     </div>
   </div>
-  <div class="bg1 bg_item" v-if="id=='1'"></div>
-  <div class="bg2 bg_item" v-if="id=='2'"></div>
-  <div class="bg3 bg_item" v-if="id=='3'"></div>
-  <div class="bg4 bg_item" v-if="id=='4'"></div>
+  <div class="bg1 bg_item" v-if="index=='1'"></div>
+  <div class="bg2 bg_item" v-if="index=='2'"></div>
+  <div class="bg3 bg_item" v-if="index=='3'"></div>
+  <div class="bg4 bg_item" v-if="index=='4'"></div>
 </div>
 </template>
 
 <script>
+import { getLesson } from '../../api/lesson'
 export default {
   name: 'lessContent',
   data () {
     return {
-      id: 1
+      id: 1,
+      index: 1,
+      lesson: {}
     }
   },
   created () {
-    let { id } = this.$route.query
+    let { id, index } = this.$route.query
+    this.index = index
     this.id = id
+    this.getLesson()
   },
   activated () {
-    let { id } = this.$route.query
+    let { id, index } = this.$route.query
+    this.index = index
     this.id = id
+    this.getLesson()
   },
-  methods: {}
+  methods: {
+    getLesson () {
+      getLesson(this.id).then(res => {
+        this.lesson = res.data
+      })
+    }
+  }
 }
 </script>
 
@@ -38,30 +52,6 @@ export default {
     width 100%
     height 100%
     background #FFE674
-    .color1{
-      color #561C8C
-      text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-      -webkit-text-stroke:3px #fff;
-      text-stroke:3px #fff;
-    }
-    .color2{
-      color #FF5883
-      text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-      -webkit-text-stroke:3px #fff;
-      text-stroke:3px #fff;
-    }
-    .color3{
-      color #561C8C
-      text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-      -webkit-text-stroke:3px #fff;
-      text-stroke:3px #fff;
-    }
-    .color4{
-      color #561C8C
-      text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-      -webkit-text-stroke:3px #fff;
-      text-stroke:3px #fff;
-    }
     .top{
       font-size 95px
       position absolute
@@ -69,8 +59,13 @@ export default {
       z-index 2
       left 131px
       .content{
-        width:811px;
-        height:1094px;
+        overflow-y auto
+        line-height 1.5
+        text-align left
+        padding 20px
+        width:771px;
+        height:1054px;
+        font-size 30px
         background:rgba(255,243,211,1);
         border:6px solid rgba(90, 16, 148, 1);
         box-shadow:9px 13px 20px 4px rgba(100,66,0,0.46);
@@ -83,18 +78,34 @@ export default {
       height 200px
       line-height 178px
       &.btn-bg1{
+        color #561C8C
+        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
+        -webkit-text-stroke:3px #fff;
+        text-stroke:3px #fff;
         background url("./images/item_1.png")
         background-size 100% 100%
       }
       &.btn-bg2{
+        color #FF5883
+        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
+        -webkit-text-stroke:3px #fff;
+        text-stroke:3px #fff;
         background url("./images/item_2.png")
         background-size 100% 100%
       }
       &.btn-bg3{
+        color #561C8C
+        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
+        -webkit-text-stroke:3px #fff;
+        text-stroke:3px #fff;
         background url("./images/item_1.png")
         background-size 100% 100%
       }
       &.btn-bg4{
+        color #561C8C
+        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
+        -webkit-text-stroke:3px #fff;
+        text-stroke:3px #fff;
         background url("./images/item_1.png")
         background-size 100% 100%
       }

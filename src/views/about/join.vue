@@ -1,13 +1,14 @@
 <template>
   <div class="detail-box">
     <Icons/>
-    <div class="title">
-      <div class="text">商业合作</div>
-    </div>
-    <div class="content">
-      <div class="content-box">
-      </div>
-    </div>
+<!--    <div class="title">-->
+<!--      <div class="text">商业合作</div>-->
+<!--    </div>-->
+<!--    <div class="content">-->
+<!--      <div class="content-box">-->
+<!--        <img src="./images/join.jpg" alt="">-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -27,7 +28,7 @@ export default {
   .detail-box{
     width 100%
     height 100%
-    background #FFE674
+    background url("./images/join.jpg")
     .title{
       position absolute
       width 913px
@@ -53,17 +54,17 @@ export default {
       text-align left
       font-size 32px
       width 847px
-      height 1127px
+      height 1110px
       position absolute
       top 551px
       left 101px
-      padding 59px 84px 59px 37px
+      padding 20px 84px 0px 37px
       background url("./images/join_content.png")
       background-size 100% 100%
       line-height 42px
       .content-box{
         width 753px
-        height 1022px
+        height 1050px
         overflow-y auto
       }
       .title-text {

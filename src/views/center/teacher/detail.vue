@@ -3,8 +3,8 @@
     <Icons/>
     <div class="top">
       <div class="teacher-title">老师介绍</div>
-      <div class="face"></div>
-      <div class="content"></div>
+      <div class="face"><img :src="teacher.icon" alt=""></div>
+      <div class="content" v-html="teacher.richText"></div>
     </div>
     <div class="bg">
       <img src="../images/detail_bg.png" alt="">
@@ -13,11 +13,29 @@
 </template>
 
 <script>
+import { getTeacher } from '@/api/teacher'
 export default {
   name: 'teacherDetail',
   data () {
     return {
-      list: [1, 1, 1, 1, 1, 1, 1]
+      teacher: {}
+    }
+  },
+  mounted () {
+    let id = this.$route.query.id
+    this.id = id
+    this.getTeacher()
+  },
+  activated () {
+    let id = this.$route.query.id
+    this.id = id
+    this.getTeacher()
+  },
+  methods: {
+    getTeacher () {
+      getTeacher(this.id).then(res => {
+        this.teacher = res.data
+      })
     }
   }
 }
@@ -53,8 +71,12 @@ export default {
         width 304px
         height 304px
         margin 34px auto
-        background #0083BD
         border-radius 50%
+        img{
+          width 100%
+          height 100%
+          border-radius 50%
+        }
       }
       .content{
         width:649px;

@@ -4,9 +4,9 @@
     <div class="top">
       <div class="activity-title">活动掠影</div>
       <div class="list" >
-        <div class="item" :key="i" v-for="i in list">
-          <div class="icon"></div>
-          <div class="name">活动名称</div>
+        <div class="item" :key="index" v-for="(item,index) in list" @click="goDetail(item._id)">
+          <div class="icon"><img :src="item.icon" alt=""></div>
+          <div class="name">{{item.name}}</div>
         </div>
       </div>
     </div>
@@ -17,11 +17,25 @@
 </template>
 
 <script>
+import { getActivityList } from '@/api/activity'
 export default {
   name: 'activity',
   data () {
     return {
-      list: [1, 1, 1, 1, 1, 1, 1]
+      list: []
+    }
+  },
+  mounted () {
+    this.getList()
+  },
+  methods: {
+    getList () {
+      getActivityList().then(res => {
+        this.list = res.data
+      })
+    },
+    goDetail (id) {
+      this.$router.push({ path: '/center/activity/detail', query: { id } })
     }
   }
 }
@@ -39,20 +53,19 @@ export default {
       left 130px
       width 828px
       .activity-title{
-        width 707px
-        height 329px
+        width 735px
+        height 357px
         margin 0 auto
         font-size 95px
         color #ffffff
         -webkit-text-stroke:4px #000;
-        line-height 280px
+        line-height 320px
         text-stroke:4px #000;
         letter-spacing:12px
         font-weight bolder
-        background url("../images/item_2.png") 100% 100%
+        background url("../images/item_2.png")
       }
       .list{
-        margin-top 33px
         width 788px
         padding 60px 0 60px 40px
         background #ffffff
@@ -70,7 +83,11 @@ export default {
             width 352px
             height 352px
             border-radius 20px
-            background rgb(254, 226, 37)
+            overflow hidden
+            img{
+              width 100%
+              height 100%
+            }
           }
           .name{
             margin-top 25px

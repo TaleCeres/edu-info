@@ -3,8 +3,8 @@
     <Icons/>
     <div class="top">
         <div class="content">
-          <div class="title">标题。。。。。</div>
-          <div class="text">大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦大师的那是就看到你金克拉撒旦</div>
+          <div class="title">{{article.title}}</div>
+          <div class="text">{{article.content}}</div>
         </div>
     </div>
     <div class="bg">
@@ -14,11 +14,30 @@
 </template>
 
 <script>
+import { getArticle } from '@/api/article'
+
 export default {
   name: 'articleDetail',
   data () {
     return {
-      list: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      article: {}
+    }
+  },
+  mounted () {
+    let id = this.$route.query.id
+    this.id = id
+    this.getArticle()
+  },
+  activated () {
+    let id = this.$route.query.id
+    this.id = id
+    this.getArticle()
+  },
+  methods: {
+    getArticle () {
+      getArticle(this.id).then(res => {
+        this.article = res.data
+      })
     }
   }
 }

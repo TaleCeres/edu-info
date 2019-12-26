@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { addAppointment } from '@/api/appointment'
 export default {
   name: 'appointment',
   data () {
@@ -54,6 +55,15 @@ export default {
       if (appointment.time === '') {
         alert('请输入时间')
       }
+      addAppointment(appointment).then(res => {
+        this.$toast.success('提交成功')
+        this.appointment = {
+          name: '',
+          age: '',
+          phone: '',
+          time: ''
+        }
+      })
     }
   }
 }

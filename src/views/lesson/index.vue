@@ -11,11 +11,27 @@
 </template>
 
 <script>
+import { getList } from '../../api/lesson'
+
 export default {
   name: 'index',
+  data () {
+    return {
+      list: []
+    }
+  },
+  mounted () {
+    this.getList()
+  },
   methods: {
+    getList () {
+      getList().then(res => {
+        console.log(res)
+        this.list = res.data
+      })
+    },
     goDetail (n) {
-      this.$router.push({ path: '/lesson/show', query: { id: n } })
+      this.$router.push({ path: '/lesson/show', query: { id: this.list[n - 1]._id, index: n } })
     }
   }
 }

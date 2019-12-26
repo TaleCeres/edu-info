@@ -2,9 +2,9 @@
   <div class="about-box">
     <Icons/>
     <div class="item-box"><div class="about-item" @click="goAppointment">预约体验课</div>
-      <div class="about-item change" @click="goBusiness">商 业 合 作</div>
-      <div class="about-item" @click="goAdvertises">招&nbsp;&nbsp;聘</div>
-      <div class="about-item change" @click="goJoin">加&nbsp;&nbsp;盟</div></div>
+      <div class="about-item change" @click="goBusiness">商业合作</div>
+      <div class="about-item" @click="goAdvertises">招聘</div>
+      <div class="about-item change" @click="goJoin">加盟</div></div>
     <div class="bl1 bl"><img src="./images/bl.png" alt=""></div>
     <div class="bl2 bl"><img src="./images/bl2.png"></div>
     <div class="bl3 bl"><img src="./images/bl.png" alt=""></div>

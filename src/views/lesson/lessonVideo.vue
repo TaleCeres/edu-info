@@ -1,36 +1,49 @@
 <template>
   <div class="lesson-content">
     <Icons/>
-    <div class="top" :class="'color'+id">
-      <div class="item" :class="'btn-bg'+id">宣传视频</div>
+    <div class="top" :class="'color'+index">
+      <div class="item" :class="'btn-bg'+index">宣传视频</div>
       <div class="content">
-        <video controls="" autoplay="" name="media" width="100%"><source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4"></video>
+        <video v-if="lesson.videos" controls="" autoplay="" name="media" width="100%"><source :src="lesson.videos[0]" type="video/mp4"></video>
       </div>
     </div>
-    <div class="bg1 bg_item" v-if="id=='1'"></div>
-    <div class="bg2 bg_item" v-if="id=='2'"></div>
-    <div class="bg3 bg_item" v-if="id=='3'"></div>
-    <div class="bg4 bg_item" v-if="id=='4'"></div>
+    <div class="bg1 bg_item" v-if="index=='1'"></div>
+    <div class="bg2 bg_item" v-if="index=='2'"></div>
+    <div class="bg3 bg_item" v-if="index=='3'"></div>
+    <div class="bg4 bg_item" v-if="index=='4'"></div>
   </div>
 </template>
 
 <script>
+import { getLesson } from '../../api/lesson'
 export default {
   name: 'lessVideo',
   data () {
     return {
-      id: 1
+      id: 1,
+      index: 1,
+      lesson: {}
     }
   },
   created () {
-    let { id } = this.$route.query
+    let { id, index } = this.$route.query
+    this.index = index
     this.id = id
+    this.getLesson()
   },
   activated () {
-    let { id } = this.$route.query
+    let { id, index } = this.$route.query
+    this.index = index
     this.id = id
+    this.getLesson()
   },
-  methods: {}
+  methods: {
+    getLesson () {
+      getLesson(this.id).then(res => {
+        this.lesson = res.data
+      })
+    }
+  }
 }
 </script>
 
@@ -70,11 +83,14 @@ export default {
       z-index 2
       left 131px
       .content{
-        width:811px;
+        /*width:811px;*/
         height:1094px;
         background:rgba(255,243,211,1);
         border:6px solid rgba(90, 16, 148, 1);
         box-shadow:9px 13px 20px 4px rgba(100,66,0,0.46);
+        video{
+          height 100%
+        }
       }
     }
     .item{

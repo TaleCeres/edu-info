@@ -1,7 +1,7 @@
 <template>
   <div class="family-box">
     <Icons/>
-    <div class="title-btn title">发 展 历 程</div>
+    <div class="title-btn title">发展历程</div>
     <div class="img"><img src="./images/history.png" alt=""></div>
   </div>
 </template>
