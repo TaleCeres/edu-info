@@ -33,7 +33,7 @@ export default {
       appointment: {
         name: '',
         age: '',
-        phone: '',
+        tel: '',
         time: ''
       }
     }
@@ -60,7 +60,7 @@ export default {
         this.appointment = {
           name: '',
           age: '',
-          phone: '',
+          tel: '',
           time: ''
         }
       })

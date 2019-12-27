@@ -4,7 +4,7 @@
     <div class="top">
         <div class="content">
           <div class="title">{{article.title}}</div>
-          <div class="text">{{article.content}}</div>
+          <div class="text" v-html="article.richText"></div>
         </div>
     </div>
     <div class="bg">
@@ -24,11 +24,6 @@ export default {
     }
   },
   mounted () {
-    let id = this.$route.query.id
-    this.id = id
-    this.getArticle()
-  },
-  activated () {
     let id = this.$route.query.id
     this.id = id
     this.getArticle()

@@ -2,10 +2,9 @@
 <div class="lesson-content">
   <Icons/>
   <div class="top">
-    <div class="item" :class="'btn-bg'+index">课程体系和设置</div>
-    <div class="content" >
-      {{lesson.content}}
-    </div>
+    <img v-if="lesson.lessonSet"   :src="lesson.lessonSet[imgIndex]" alt="">
+    <div class="prev btn" @click="prevPage"><img src="./images/prev.png" alt="" ></div>
+    <div class="next btn" @click="nextPage"><img src="./images/next.png" alt=""></div>
   </div>
   <div class="bg1 bg_item" v-if="index=='1'"></div>
   <div class="bg2 bg_item" v-if="index=='2'"></div>
@@ -22,6 +21,7 @@ export default {
     return {
       id: 1,
       index: 1,
+      imgIndex: 0,
       lesson: {}
     }
   },
@@ -42,6 +42,24 @@ export default {
       getLesson(this.id).then(res => {
         this.lesson = res.data
       })
+    },
+    prevPage () {
+      if ((this.imgIndex - 1) < 0) {
+        this.$toast('已经到底了')
+        return false
+      } else {
+        this.imgIndex = this.imgIndex - 1
+      }
+    },
+    nextPage () {
+      console.log('下一页')
+      console.log(this.imgIndex)
+      if ((this.imgIndex + 1) >= this.lesson.lessonSet.length) {
+        this.$toast('已经到底了')
+        return false
+      } else {
+        this.imgIndex = this.imgIndex + 1
+      }
     }
   }
 }
@@ -53,68 +71,21 @@ export default {
     height 100%
     background #FFE674
     .top{
-      font-size 95px
-      position absolute
-      top 280px
       z-index 2
-      left 131px
-      .content{
-        overflow-y auto
-        line-height 1.5
-        text-align left
-        padding 20px
-        width:771px;
-        height:1054px;
-        font-size 30px
-        background:rgba(255,243,211,1);
-        border:6px solid rgba(90, 16, 148, 1);
-        box-shadow:9px 13px 20px 4px rgba(100,66,0,0.46);
+      width 100%;
+      height 100%
+      top 0
+      .btn{
+        position absolute
+        top 1400px
+        z-index 10
       }
-    }
-    .item{
-      margin-bottom 80px
-      text-align center
-      width 840px
-      height 200px
-      line-height 178px
-      &.btn-bg1{
-        color #561C8C
-        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-        -webkit-text-stroke:3px #fff;
-        text-stroke:3px #fff;
-        background url("./images/item_1.png")
-        background-size 100% 100%
+      .prev{
+        left 400px
       }
-      &.btn-bg2{
-        color #FF5883
-        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-        -webkit-text-stroke:3px #fff;
-        text-stroke:3px #fff;
-        background url("./images/item_2.png")
-        background-size 100% 100%
+      .next{
+        left 550px
       }
-      &.btn-bg3{
-        color #561C8C
-        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-        -webkit-text-stroke:3px #fff;
-        text-stroke:3px #fff;
-        background url("./images/item_1.png")
-        background-size 100% 100%
-      }
-      &.btn-bg4{
-        color #561C8C
-        text-shadow:9px 13px 0px rgba(47,0,90,0.5);
-        -webkit-text-stroke:3px #fff;
-        text-stroke:3px #fff;
-        background url("./images/item_1.png")
-        background-size 100% 100%
-      }
-    }
-    .bg_item{
-      position absolute
-      z-index 1
-      width:1080px;
-      background-size 100% 100%
     }
     .bg1{
       height:1249px;
