@@ -13,7 +13,7 @@
       </div>
       <div class="input-item">
         <div class="label">联系方式:</div>
-        <input type="text" v-model="appointment.phone" maxlength="11"/>
+        <input type="text" v-model="appointment.tel" maxlength="11"/>
       </div>
       <div class="input-item">
         <div class="label">预约时间:</div>
@@ -56,7 +56,7 @@ export default {
         alert('请输入时间')
       }
       addAppointment(appointment).then(res => {
-        this.$toast.success('提交成功')
+        alert('提交成功')
         this.appointment = {
           name: '',
           age: '',
