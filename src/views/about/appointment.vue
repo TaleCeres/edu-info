@@ -49,7 +49,7 @@ export default {
       if (appointment.name === '') {
         alert('请输入名字')
       }
-      if (appointment.phone === '' || appointment.phone.length < 11) {
+      if (appointment.tel === '' || appointment.tel.length < 11) {
         alert('请输入正确的手机号')
       }
       if (appointment.time === '') {
