@@ -66,7 +66,6 @@ export default {
         }
         .text{
           margin-top 60px
-          text-align left
           font-size:36px;
           font-weight:bold;
           color:rgba(0,0,0,1);

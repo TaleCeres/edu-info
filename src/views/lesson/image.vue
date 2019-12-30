@@ -4,7 +4,7 @@
     <div class="top">
       <div class="item" :class="'btn-bg'+index">课程展示</div>
       <div class="content">
-        <img :src="item" alt="" v-for="(item,index) in lesson.images " :key="index">
+        <img :src="item" alt="" v-for="(item,index) in lesson.images " :key="index" class="img-item">
       </div>
     </div>
     <div class="bg1 bg_item" v-if="index=='1'"></div>
@@ -65,6 +65,9 @@ export default {
         background:rgba(255,243,211,1);
         border:6px solid rgba(90, 16, 148, 1);
         box-shadow:9px 13px 20px 4px rgba(100,66,0,0.46);
+        .img-item{
+          margin-bottom 40px
+        }
       }
     }
     .item{

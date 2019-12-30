@@ -52,8 +52,7 @@ export default {
       }
     },
     nextPage () {
-      console.log('下一页')
-      console.log(this.imgIndex)
+      console.log(this.lesson.lessonSet.length)
       if ((this.imgIndex + 1) >= this.lesson.lessonSet.length) {
         this.$toast('已经到底了')
         return false
@@ -77,32 +76,36 @@ export default {
       top 0
       .btn{
         position absolute
-        top 1400px
+        top 250px
         z-index 10
       }
       .prev{
-        left 400px
+        left 800px
       }
       .next{
-        left 550px
+        left 900px
       }
     }
     .bg1{
+      position absolute
       height:1249px;
       top 435px
       background url("./images/bg_1.png")
     }
     .bg2{
+      position absolute
       height:1055px;
       top 647px
       background url("./images/bg_2.png")
     }
     .bg3{
+      position absolute
       height:1339px;
       top 364px
       background url("./images/bg_3.png")
     }
     .bg4{
+      position absolute
       height:1355px;
       top 364px
       background url("./images/bg_4.png")

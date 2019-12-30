@@ -8,7 +8,7 @@
           <div class="icon"><img :src="item.icon"></div>
           <div class="content">
             <div class="title">{{item.title}}</div>
-            <div class="intro">{{item.content.substring(1,50)+'...'}}</div>
+            <div class="intro">{{item.content}}</div>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ export default {
             text-align left
             margin-left 30px
             .title{
-              font-size:50px;
+              font-size:40px;
               font-weight:bold;
               color:rgba(0,0,0,1);
             }

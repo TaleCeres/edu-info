@@ -77,12 +77,11 @@ export default {
         overflow-y auto
         .item{
           width 294px
-          height 294px
+          min-height 294px
           margin-right 20px
           border-radius 20px
           margin-bottom 29px
           float left
-          overflow hidden
           background #0083BD
           img{
             width 100%

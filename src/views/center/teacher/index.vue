@@ -75,8 +75,8 @@ export default {
         box-shadow:9px 13px 16px 0px rgba(86,51,0,0.48);
         overflow-y auto
         .item{
-          width 394px
-          height 361px
+          width 380px
+          height 400px
           float left
           .face{
             margin 0 auto
