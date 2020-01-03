@@ -6,11 +6,12 @@
 </template>
 
 <script>
+import store from '../store'
 export default {
   name: 'btn-home',
   methods: {
     goHome () {
-      this.$router.push('/')
+      this.$router.push({ path: '/', query: { org: store.state.org } })
     }
   }
 }

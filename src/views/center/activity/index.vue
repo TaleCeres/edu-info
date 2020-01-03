@@ -67,21 +67,21 @@ export default {
       }
       .list{
         width 788px
-        padding 60px 0 60px 40px
+        padding 60px 0 60px 35px
         background #ffffff
         height:977px;
         border-radius 40px
         box-shadow:9px 13px 16px 0px rgba(86,51,0,0.48);
         overflow-y auto
         .item{
-          width 352px
+          width 350px
           height 480px
           float left
-          margin-right 40px
+          margin-right 35px
           .icon{
             margin 0 auto
-            width 352px
-            height 352px
+            width 350px
+            height 350px
             border-radius 20px
             overflow hidden
             img{
@@ -92,7 +92,7 @@ export default {
           .name{
             margin-top 25px
             text-align center
-            font-size:50px;
+            font-size:32px;
             font-weight:bold;
             color:rgba(0,0,0,1);
           }
