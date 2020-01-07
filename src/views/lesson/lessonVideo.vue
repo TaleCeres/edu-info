@@ -3,8 +3,8 @@
     <Icons/>
     <div class="top" :class="'color'+index">
       <div class="item" :class="'btn-bg'+index">宣传视频</div>
-      <div class="content">
-        <video v-if="lesson.videos" controls="" autoplay="" name="media" width="100%"><source :src="lesson.videos[0]" type="video/mp4"></video>
+      <div class="content" v-if="lesson.videos">
+        <video v-for="(item,index) in lesson.videos" controls="" :key="index" name="media" width="100%"><source :src='item' type="video/mp4"></video>
       </div>
     </div>
     <div class="bg1 bg_item" v-if="index=='1'"></div>
@@ -83,14 +83,12 @@ export default {
       z-index 2
       left 131px
       .content{
-        /*width:811px;*/
+        width:811px;
+        overflow-y auto
         height:1094px;
         background:rgba(255,243,211,1);
         border:6px solid rgba(90, 16, 148, 1);
         box-shadow:9px 13px 20px 4px rgba(100,66,0,0.46);
-        video{
-          height 100%
-        }
       }
     }
     .item{
