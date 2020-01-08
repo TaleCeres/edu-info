@@ -53,6 +53,7 @@ export default {
       left 63px
       width 962px
       .photo-title{
+        text-align center
         width 735px
         height 357px
         margin 0 auto

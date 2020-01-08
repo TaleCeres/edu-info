@@ -44,6 +44,7 @@ export default {
       left 179px
       z-index 2
       .nav-item{
+        text-align center
         width 735px
         height 357px
         font-size 95px

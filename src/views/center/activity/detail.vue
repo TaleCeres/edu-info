@@ -4,7 +4,7 @@
     <div class="top">
       <div class="content">
         <div class="title">{{activity.name}}</div>
-        <div class="text" v-html="activity.richText"></div>
+        <div  v-html="activity.richText" class="ql-editor text"></div>
       </div>
     </div>
     <div class="bg">

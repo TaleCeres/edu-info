@@ -23,6 +23,11 @@ export default {
       article: {}
     }
   },
+  activated () {
+    let id = this.$route.query.id
+    this.id = id
+    this.getArticle()
+  },
   mounted () {
     let id = this.$route.query.id
     this.id = id
@@ -60,6 +65,7 @@ export default {
         border-radius 40px
         overflow-y auto
         .title{
+          text-align center
           font-size:70px;
           font-weight:bold;
           color:rgba(0,0,0,1);

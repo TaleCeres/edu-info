@@ -53,6 +53,7 @@ export default {
       left 130px
       width 828px
       .activity-title{
+        text-align center
         width 735px
         height 357px
         margin 0 auto

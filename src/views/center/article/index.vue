@@ -28,7 +28,7 @@ export default {
       list: []
     }
   },
-  mounted () {
+  created () {
     this.getList()
   },
   methods: {
@@ -56,6 +56,7 @@ export default {
       left 77px
       width 934px
       .article-title{
+        text-align center
         width 735px
         height 357px
         margin 0 auto

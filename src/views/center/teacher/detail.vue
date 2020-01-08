@@ -58,6 +58,7 @@ export default {
       border-radius 40px
       box-shadow:9px 13px 16px 0px rgba(86,51,0,0.48);
       .teacher-title{
+        text-align center
         margin 0 auto
         font-size 80px
         color #ffffff

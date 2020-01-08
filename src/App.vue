@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 <style lang="stylus">
@@ -8,7 +10,6 @@
   font-family: 'hwyt', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   width: 1080px;
   height: 1920px;
   color: #2c3e50;
