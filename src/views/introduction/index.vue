@@ -4,6 +4,8 @@
   <div class="nav-box">
     <div class="title-btn nav" @click="goHistory">发展历程</div>
     <div class="title-btn nav" @click="goFamily">大家庭</div>
+    <div class="title-btn nav" @click="goHonor">荣誉资料</div>
+    <div class="title-btn nav" @click="goVideo">宣传视频</div>
   </div>
 </div>
 </template>
@@ -17,6 +19,12 @@ export default {
     },
     goFamily () {
       this.$router.push('/introduction/family')
+    },
+    goHonor () {
+      this.$router.push('/introduction/honor')
+    },
+    goVideo () {
+      this.$router.push('/introduction/video')
     }
   }
 }
@@ -25,6 +33,7 @@ export default {
 <style scoped lang="stylus">
   .introduction-box{
     background url("./images/introduciton_bg.png")
+    text-align center
     height: 100%;
     .nav-box{
       position absolute
@@ -32,7 +41,7 @@ export default {
       left 112px
     }
     .nav{
-      margin-top 200px
+      margin-top 100px
       width 856px
       height 206px
       line-height 164px

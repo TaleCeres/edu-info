@@ -26,7 +26,6 @@ export default {
   methods: {
     getList () {
       getList().then(res => {
-        console.log(res)
         this.list = res.data
       })
     },

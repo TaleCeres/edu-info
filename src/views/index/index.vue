@@ -17,8 +17,6 @@ export default {
   name: 'index',
   created () {
     let org = this.$route.query.org
-    console.log(this.$store.commit)
-    console.log(org)
     this.$store.commit('SET_ORG', org)
   },
   methods: {

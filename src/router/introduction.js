@@ -12,6 +12,21 @@ export default [
     name: 'introductionFamily'
   },
   {
+    path: '/introduction/video',
+    component: _import('introduction/video'),
+    name: 'introductionVideo'
+  },
+  {
+    path: '/introduction/honor',
+    component: _import('introduction/honor/index'),
+    name: 'introductionHonor'
+  },
+  {
+    path: '/introduction/honor/detail',
+    component: _import('introduction/honor/detail'),
+    name: 'introductionHonorDetail'
+  },
+  {
     path: '/introduction/history',
     component: _import('introduction/history'),
     name: 'introductionHistory'

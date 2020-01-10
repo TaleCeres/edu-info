@@ -52,7 +52,6 @@ export default {
       }
     },
     nextPage () {
-      console.log(this.lesson.lessonSet.length)
       if ((this.imgIndex + 1) >= this.lesson.lessonSet.length) {
         this.$toast('已经到底了')
         return false
