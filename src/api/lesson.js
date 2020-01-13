@@ -41,3 +41,10 @@ export function editLesson (data) {
     data
   })
 }
+
+export function getVideos () {
+  return request({
+    url: '/common/getIntroduceVideo',
+    method: 'get'
+  })
+}

@@ -13,7 +13,7 @@ export default [
   },
   {
     path: '/introduction/video',
-    component: _import('introduction/video'),
+    component: _import('introduction/introVideo'),
     name: 'introductionVideo'
   },
   {
