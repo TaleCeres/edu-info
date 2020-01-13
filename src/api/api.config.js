@@ -1,5 +1,5 @@
-const EXTERNAL_URL = 'http://meishule.wuyao.com:6001/api/'
-const INTERNAL_URL = 'http://meishule.wuyao.com:6001/api/'
+const EXTERNAL_URL = 'http://meishule.51anquan.com:6001/api/'
+const INTERNAL_URL = 'http://meishule.51anquan.com:6001/api/'
 // const PROXY_URL = 'http://izjgk.free.idcfengye.com/v1'
 
 export default {

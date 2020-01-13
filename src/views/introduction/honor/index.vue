@@ -22,7 +22,7 @@
 <script>
 import { getList } from '@/api/honor'
 export default {
-  name: 'article',
+  name: 'honor',
   data () {
     return {
       list: []
