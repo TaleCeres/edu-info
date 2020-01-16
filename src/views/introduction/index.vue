@@ -3,9 +3,9 @@
   <Icons/>
   <div class="nav-box">
     <div class="title-btn nav" @click="goHistory">发展历程</div>
-    <div class="title-btn nav" @click="goFamily">大家庭</div>
-    <div class="title-btn nav" @click="goHonor">荣誉资料</div>
-    <div class="title-btn nav" @click="goVideo">宣传视频</div>
+    <div class="title-btn nav" @click="goFamily">美数乐大家庭</div>
+    <div class="title-btn nav" @click="goHonor">荣誉奖项</div>
+    <div class="title-btn nav" @click="goVideo">品牌宣传视频</div>
   </div>
 </div>
 </template>
